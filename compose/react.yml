@@ -1,4 +1,4 @@
-version: '3.7'
+version: "3.7"
 
 ########################################################################################################################
 #
@@ -15,7 +15,6 @@ version: '3.7'
 ########################################################################################################################
 
 services:
-
   client:
     image: node:${NODE_VERSION}
     working_dir: /usr/src/app
@@ -26,7 +25,7 @@ services:
       - ./client:/usr/src/app
     networks:
       - net
-    stdin_open: true  # required to keep react process alive
+    stdin_open: true # required to keep react process alive
     environment:
       HOST: 0.0.0.0
       PORT: 3000
@@ -34,4 +33,3 @@ services:
       - "traefik.enable=true"
       - "traefik.http.routers.client.rule=Host(`${BASE_DOMAIN}`)"
       - "traefik.http.services.client.loadbalancer.server.port=3000"
-

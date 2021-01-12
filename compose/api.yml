@@ -1,4 +1,4 @@
-version: '3.7'
+version: "3.7"
 
 ########################################################################################################################
 #
@@ -14,7 +14,6 @@ version: '3.7'
 #
 ########################################################################################################################
 services:
-
   api:
     image: node:${NODE_VERSION}
     working_dir: /usr/src/app
@@ -32,4 +31,3 @@ services:
       - "traefik.enable=true"
       - "traefik.http.routers.api.rule=Host(`api.${BASE_DOMAIN}`)"
       - "traefik.http.services.api.loadbalancer.server.port=3000"
-
