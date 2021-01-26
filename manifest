@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# empty manifest 
+
+repository=nothing
+parent=nothing
+variants=(nothing)
